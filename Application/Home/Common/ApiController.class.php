@@ -10,7 +10,7 @@ class ApiController extends Controller {
 
 	public function __construct(){
 		parent::__construct();
-		Vendor('Wx');
+		//Vendor('Wx');
 		date_default_timezone_set('PRC');
 		header('Access-Control-Allow-Credentials: true');
         header('Access-Control-Allow-Origin:http://localhost');
@@ -19,9 +19,9 @@ class ApiController extends Controller {
         header('Access-Control-Allow-Methods:PUT,POST,GET,DELETE,OPTIONS');
         header('X-Powered-By: 3.2.1');
 
-		$this->checkLogin();
-		if($this->use_wx)
-			$this->wx = $this->wx();
+		//$this->checkLogin();
+		//if($this->use_wx)
+			//$this->wx = $this->wx();
 	}
 
 	private function checkLogin(){
@@ -73,7 +73,7 @@ class ApiController extends Controller {
 		$this->ajaxReturn($result);
 	}
 
-	private function wx()
+	/*private function wx()
 	{
         if(empty(S('access_token')))
         {
@@ -82,5 +82,5 @@ class ApiController extends Controller {
 	        return $wx;
         }
         return new \Wx($this->appid, $this->secret, S('access_token'));
-	}
+	}*/
 }
